@@ -18,6 +18,10 @@
             
                 <input type="file" name ="fileName[]" multiple>
                 
+        <div class="form-group">
+            {{Form::hidden ('Blank', 'Blank')}}
+           
+        </div>   
          <div class="form-group">
             {{Form::label('number', 'number')}}
             {{Form::text('number', '',['class'=>'form-control','placeholder'=> 'Enter Number Question'])}}

@@ -32,7 +32,9 @@ class UploadQuestionController  extends Controller
             
 
             //create new message
+           
             $UploadQuestion1 = new UploadQuestion1;
+            $UploadQuestion1->Questions_types_id =$request->input('Upload');
             $UploadQuestion1->number =$request->input('number');
             $UploadQuestion1->solution =$request->input('name');
             $UploadQuestion1->question =$request->input('question');

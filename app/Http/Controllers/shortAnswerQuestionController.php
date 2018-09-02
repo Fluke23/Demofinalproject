@@ -34,7 +34,7 @@ class shortAnswerQuestionController extends Controller
             //create new message
             $shortAnswerQuestion1 = new shortAnswerQuestion1;
             
-            $shortAnswerQuestion1->Questions_types_id =$request->input('Type');
+            $shortAnswerQuestion1->Questions_types_id =$request->input('Shortanswe');
             $shortAnswerQuestion1->number =$request->input('number');
             $shortAnswerQuestion1->solution =$request->input('name');
             $shortAnswerQuestion1->question =$request->input('question');

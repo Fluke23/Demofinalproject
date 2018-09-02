@@ -33,6 +33,7 @@ class blankQuestionController  extends Controller
 
             //create new message
             $blankQuestion1 = new blankQuestion1;
+            $blankQuestion1->questions_types_id =$request->input('Blank');
             $blankQuestion1->number =$request->input('number');
             $blankQuestion1->solution =$request->input('name');
             $blankQuestion1->question =$request->input('question');

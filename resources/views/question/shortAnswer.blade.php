@@ -16,8 +16,8 @@
                 <input type="file" name ="fileName[]" multiple>
                 
                 <div class="form-group">
-            {{Form::label('Type', 'Type')}}
-            {{Form::text('Type', 'Shortanswer')}}
+            {{Form::hidden('Shortanswe', 'Shortanswe')}}
+           
             </div>  
                 <div class="form-group">
             {{Form::label('number', 'number')}}
