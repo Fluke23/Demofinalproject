@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\UploadQuestion;
 use App\UploadQuestion1;
 use Illuminate\Http\Request;
+use DB;
 
 class UploadQuestionController  extends Controller
 {
@@ -16,6 +17,10 @@ class UploadQuestionController  extends Controller
     public function storeFiles(request $request){
         
         //return $request-> all();
+
+        $currentQuestionId = DB::table('Questions')->max('questions_id');
+        
+        $lastestQuestinID = $currentQuestionId+1;
        
         foreach($request->fileName as $files){
 
@@ -24,12 +29,6 @@ class UploadQuestionController  extends Controller
             $files->storeAs('public/upload',$fileName);
         
 
-            /*add file into database */
-            $UploadQuestion = new UploadQuestion;
-            $UploadQuestion ->img_url =$fileName;
-            //$UploadQuestion ->size = $size;
-            $UploadQuestion -> save();
-            
 
             //create new message
            
@@ -41,6 +40,16 @@ class UploadQuestionController  extends Controller
             $UploadQuestion1->score =$request->input('score');
             //save message
             $UploadQuestion1->save();
+
+            /*add file into database */
+            $UploadQuestion = new UploadQuestion;
+            $UploadQuestion ->img_url =$fileName;
+            $UploadQuestion ->questions_id =$lastestQuestinID;
+            //$UploadQuestion ->size = $size;
+            $UploadQuestion -> save();
+            
+
+            
            return redirect ('/question/index')->with('success','upload sent') ;
             //return'yes';
             

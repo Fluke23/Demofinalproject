@@ -14,7 +14,7 @@
             <form action="{{route('blankQuestion.file')}}" method = "post"class="form-horizontal" enctype="multipart/form-data"> 
                 {{csrf_field()}}
 
-    
+
             
                 <input type="file" name ="fileName[]" multiple>
                 
@@ -41,7 +41,7 @@
 
          
         <input type="submit" class = "btn btn-info">
-        </form>
+    </form>
         </div>
            
     </div>
