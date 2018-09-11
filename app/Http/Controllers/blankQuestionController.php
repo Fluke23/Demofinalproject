@@ -6,10 +6,13 @@ use App\blankQuestion;
 use App\blankQuestion1;
 use Illuminate\Http\Request;
 use DB;
+use App\Quiz;
+
 
 class blankQuestionController  extends Controller
 {
-    public function showUploadForms(){
+    public function showUploadForms($quiz_id){
+        // dd($quiz_id);
         return view('blankQuestion');
     }
     
@@ -23,7 +26,7 @@ class blankQuestionController  extends Controller
         
         $lastestQuestinID = $currentQuestionId+1;
 
-        // dd($lastestQuestinID);
+
         
 
         foreach($request->fileName as $files){
@@ -41,6 +44,7 @@ class blankQuestionController  extends Controller
                         $blankQuestion1->solution =$request->input('name');
                         $blankQuestion1->question =$request->input('question');
                         $blankQuestion1->score =$request->input('score');
+                        $blankQuestion1->quizs_id =$request->input('quiz_id');
                         //save message
                         $blankQuestion1->save();
         

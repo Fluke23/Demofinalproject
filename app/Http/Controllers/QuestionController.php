@@ -26,8 +26,9 @@ class QuestionController extends Controller
             ->where('quizs.quizs_id','=',$quizs_id)
             ->get();
            
+        
             
-            return view('question/index',compact('question'));       
+            return view('question/index',compact('question','quizs_id'));       
     }
 
     /**
@@ -96,8 +97,8 @@ class QuestionController extends Controller
         
     }
 
-    public function callBlankQuestion(){
-        return view('question/blankQuestion');  
+    public function callBlankQuestion($quiz_id){
+        return view('question/blankQuestion',compact('quiz_id'));  
     }
     public function callShortAnswerQuesstion(){
         return view('question/shortAnswer');  

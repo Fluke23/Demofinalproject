@@ -5,15 +5,17 @@
     <div class="row mb-2">
         <div class="col-md-6">
             <h2 >Question Manager</h2>
+           
         </div>
             <div class="col-md-6">    
                 <div class="btn-group float-right">
                  <button type="button" class="btn btn-success dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Add Question
                  </button>
-            <div class="dropdown-menu">
+            <div class="dropdown-menu"> 
                 <a class="dropdown-item"  
-                        href="{{ URL::to('/question/blankQuestion/{id?}')}}">BlankQuestion</a>
+                        href="/question/blankQuestion/{{$quizs_id}}">BlankQuestion</a>
+                        <!-- href="{{ URL::to('/question/blankQuestion/')}}">BlankQuestion</a> -->
                 <a class="dropdown-item"  
                         href="{{ URL::to('/question/shortAnswer/{id?}')}}">shortAnswer</a>
                 <a class="dropdown-item" 

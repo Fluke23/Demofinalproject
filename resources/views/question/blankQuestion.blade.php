@@ -7,7 +7,6 @@
 <body>
     
          <h1> blankQuestion</h1>
-   
     <div class="container">
         <div class="row">
         <br>
@@ -22,6 +21,12 @@
             {{Form::hidden ('Blank', 'Blank')}}
            
         </div>   
+        <div class="form-group">
+            {{Form::hidden ('Blank', 'Blank')}}
+           
+        
+        
+        </div>
          <div class="form-group">
             {{Form::label('number', 'number')}}
             {{Form::text('number', '',['class'=>'form-control','placeholder'=> 'Enter Number Question'])}}
@@ -37,6 +42,10 @@
         <div class="form-group">
             {{Form::label('score', 'score')}}
             {{Form::text('score', '',['placeholder'=> 'Enter Score'])}}
+        </div>
+        <div class="form-group">
+            {{Form::hidden('quiz_id',$quiz_id)}}
+          
         </div>
 
          
