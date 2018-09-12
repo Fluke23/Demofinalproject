@@ -35,6 +35,10 @@
             {{Form::label('score', 'score')}}
             {{Form::text('score', '',['placeholder'=> 'enter Score'])}}
         </div>
+        <div class="form-group">
+            {{Form::hidden('quiz_id',$quiz_id)}}
+          
+        </div>
         <input type="submit" class = "btn btn-info">
         </form>
         </div>

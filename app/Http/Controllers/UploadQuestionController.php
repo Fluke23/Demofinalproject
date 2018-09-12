@@ -6,10 +6,11 @@ use App\UploadQuestion;
 use App\UploadQuestion1;
 use Illuminate\Http\Request;
 use DB;
+use App\Quiz;
 
 class UploadQuestionController  extends Controller
 {
-    public function showUploadForms(){
+    public function showUploadForms($quiz_id){
         return view('UploadQuestion');
     }
     
@@ -38,6 +39,7 @@ class UploadQuestionController  extends Controller
             $UploadQuestion1->solution =$request->input('name');
             $UploadQuestion1->question =$request->input('question');
             $UploadQuestion1->score =$request->input('score');
+            $UploadQuestion1->quizs_id =$request->input('quiz_id');
             //save message
             $UploadQuestion1->save();
 

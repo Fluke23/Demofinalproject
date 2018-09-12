@@ -60,7 +60,7 @@
                         <td >
                             <a href="{{URL::to('/question/'.$que->questions_id)}}" class="btn btn-info ">View</a>
                             <a href="{{ URL::to('question/editQuestion/'.$que->questions_id) }}" class="btn btn-warning ">Edit</a>
-                            <!-- <a href="{{ URL::to('question/deleteQuiz/'.$que->quizs_id.'/'.$q->subject_id)}}" class="btn btn-danger">Delete</a> -->
+                            <a href="{{ URL::to('question/deleteQuiz/'.$que->quizs_id.'/'.$q->subject_id)}}" class="btn btn-danger">Delete</a> 
                         </td>
                 </tr>
                      @endforeach

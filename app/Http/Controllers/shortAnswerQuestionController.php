@@ -6,10 +6,11 @@ use App\shortAnswerQuestion;
 use App\shortAnswerQuestion1;
 use Illuminate\Http\Request;
 use DB;
+use App\Quiz;
 
 class shortAnswerQuestionController extends Controller
 {
-    public function showUploadForms(){
+    public function showUploadForms($quiz_id){
         return view('shortAnswer');
     }
     
@@ -37,6 +38,7 @@ class shortAnswerQuestionController extends Controller
              $shortAnswerQuestion1->solution =$request->input('name');
              $shortAnswerQuestion1->question =$request->input('question');
              $shortAnswerQuestion1->score =$request->input('score');
+             $shortAnswerQuestion1->quizs_id =$request->input('quiz_id');
              //save message
              $shortAnswerQuestion1->save();
 
