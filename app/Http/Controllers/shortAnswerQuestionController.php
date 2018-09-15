@@ -48,11 +48,13 @@ class shortAnswerQuestionController extends Controller
             $shortAnswerQuestion ->questions_id =$lastestQuestinID;
             //$blankQuestion ->size = $size;
             $shortAnswerQuestion -> save();
+            //สร้างตัวแปร quizId
+            $quiz_id = $request->input('quiz_id');
             
 
            
-
-           return redirect ('/question/index')->with('success','upload sent') ;
+            return redirect()->route('question.index', [$quiz_id]);
+          
             //return'yes';
             
                 

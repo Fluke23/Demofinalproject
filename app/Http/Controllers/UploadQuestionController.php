@@ -50,9 +50,14 @@ class UploadQuestionController  extends Controller
             //$UploadQuestion ->size = $size;
             $UploadQuestion -> save();
             
+            $quiz_id = $request->input('quiz_id');
+            
+
+           
+            return redirect()->route('question.index', [$quiz_id]);
 
             
-           return redirect ('/question/index')->with('success','upload sent') ;
+          
             //return'yes';
             
                 

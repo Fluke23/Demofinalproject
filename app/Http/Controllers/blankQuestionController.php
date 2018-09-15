@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use DB;
 use App\Quiz;
 
-
 class blankQuestionController  extends Controller
 {
     public function showUploadForms($quiz_id){
@@ -57,8 +56,7 @@ class blankQuestionController  extends Controller
             $blankQuestion -> save();
             $quiz_id = $request->input('quiz_id');
 
-            // dd($quiz_id);
-        //    return redirect ('/question'+"/"+$quiz_id)
+           
            return redirect()->route('question.index', [$quiz_id]);
             //return'yes';
             }

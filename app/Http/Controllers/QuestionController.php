@@ -106,11 +106,11 @@ class QuestionController extends Controller
     public function callBlankQuestion($quiz_id){
         return view('question/blankQuestion',compact('quiz_id'));  
     }
-    public function callShortAnswerQuesstion(){
-        return view('question/shortAnswer');  
+    public function callShortAnswerQuesstion($quiz_id){
+        return view('question/shortAnswer',compact('quiz_id'));  
     }
-    public function callUploadFileQuesstion(){
-        return view('question/UploadQuestion');  
+    public function callUploadFileQuesstion($quiz_id){
+        return view('question/UploadQuestion',compact('quiz_id'));  
     }
 
     
