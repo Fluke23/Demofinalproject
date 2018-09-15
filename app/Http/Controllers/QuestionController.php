@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Question;
+use App\Quiz;
 
 
 class QuestionController extends Controller
@@ -17,18 +19,22 @@ class QuestionController extends Controller
     public function index($quizs_id)
     {
        
-        $question = DB::table('Questions')
+       $question = DB::table('Questions')
             // ->join('Question_types','Question_types.questions_types_id','=','Questions.questions_types_id')
+            
             ->join('quizs','quizs.quizs_id','=','Questions.quizs_id')
-            ->join('Answer','Answer.questions_id','=','Questions.questions_id')
-            ->join('Choice','Choice.questions_id','=','Questions.questions_id')
-            ->join('choice_type','choice_type.choice_type_id','=','Choice.choice_type_id')
+           // ->join('Answer','Answer.questions_id','=','Questions.questions_id')
+           // ->join('Choice','Choice.questions_id','=','Questions.questions_id')
+           // ->join('choice_type','choice_type.choice_type_id','=','Choice.choice_type_id')
             ->where('quizs.quizs_id','=',$quizs_id)
             ->get();
-           
+
+
         
+        
+           
             
-            return view('question/index',compact('question','quizs_id'));       
+            return view('/question/index',compact('question','quizs_id'));       
     }
 
     /**
@@ -106,4 +112,6 @@ class QuestionController extends Controller
     public function callUploadFileQuesstion(){
         return view('question/UploadQuestion');  
     }
+
+    
 }

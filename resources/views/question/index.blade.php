@@ -47,20 +47,17 @@
                     @foreach($question as $que)
                 <tr>
                         <td style="font-size: 0.8em;">{{$que->question}}</td>
-                        <td style="font-size: 0.8em;">{{$que->Score}}</td>
-                        <td style="font-size: 0.8em;">{{$que->quiz_date}}</td>
-                        <td style="font-size: 0.8em;">{{$que->subject_id}}</td>
-                        {{-- name is from group_name --}}
-                        <td style="font-size: 0.8em;">{{$que->group_name}}</td>
-                        <td style="font-size: 0.8em;">{{$que->type_name}}</td>  
-                        <td style="font-size: 0.8em;">{{$que->status_name}}</td>
+                        <td style="font-size: 0.8em;">{{$que->score}}</td>
+                       
+                
                         
                     
 
                         <td >
                             <a href="{{URL::to('/question/'.$que->questions_id)}}" class="btn btn-info ">View</a>
                             <a href="{{ URL::to('question/editQuestion/'.$que->questions_id) }}" class="btn btn-warning ">Edit</a>
-                            <a href="{{ URL::to('question/deleteQuiz/'.$que->quizs_id.'/'.$q->subject_id)}}" class="btn btn-danger">Delete</a> 
+                            <a href="{{ URL::to('question/deleteQuiz/'.$que->questions_id)}}" class="btn btn-danger">Delete</a> 
+                        
                         </td>
                 </tr>
                      @endforeach

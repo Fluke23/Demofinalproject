@@ -55,9 +55,11 @@ class blankQuestionController  extends Controller
             $blankQuestion ->questions_id =$lastestQuestinID;
             //$blankQuestion ->size = $size;
             $blankQuestion -> save();
-            
+            $quiz_id = $request->input('quiz_id');
 
-           return redirect ('/question/index')->with('success','upload sent') ;
+            // dd($quiz_id);
+        //    return redirect ('/question'+"/"+$quiz_id)
+           return redirect()->route('question.index', [$quiz_id]);
             //return'yes';
             }
 
