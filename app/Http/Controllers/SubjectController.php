@@ -43,7 +43,7 @@ class SubjectController extends Controller
         
 
 
-        return view('subject/index',compact('subjects'));
+        return view('/Admin/subject/index',compact('subjects'));
         
     }
 
@@ -55,7 +55,7 @@ class SubjectController extends Controller
     public function create()
     {
 
-        return view('subject/addSubject');
+        return view('/Admin/subject/addSubject');
     }
 
     /**

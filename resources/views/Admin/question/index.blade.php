@@ -14,12 +14,12 @@
                  </button>
             <div class="dropdown-menu"> 
                 <a class="dropdown-item"  
-                        href="/question/blankQuestion/{{$quizs_id}}">BlankQuestion</a>
+                        href="/Admin/question/blankQuestion/{{$quizs_id}}">BlankQuestion</a>
                         <!-- href="{{ URL::to('/question/blankQuestion/')}}">BlankQuestion</a> -->
                 <a class="dropdown-item"  
-                        href="{{ URL::to('/question/shortAnswer/{id?}')}}">shortAnswer</a>
+                        href="{{ URL::to('/Admin/question/shortAnswer/{id?}')}}">shortAnswer</a>
                 <a class="dropdown-item" 
-                        href="{{ URL::to('/question/UploadQuestion/{id?}')}}">UploadQuestion</a>
+                        href="{{ URL::to('/Admin/question/UploadQuestion/{id?}')}}">UploadQuestion</a>
                 <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">TrueFalse</a>
             </div>

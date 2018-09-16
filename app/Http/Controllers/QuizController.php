@@ -45,7 +45,7 @@ class QuizController extends Controller
                 ->where('Subjects.subject_id','=',$subject_id)
                 ->get();
         
-        return view('quiz/quizDetail',compact('quizzes','subject_id'));
+        return view('/Admin/quiz/quizDetail',compact('quizzes','subject_id'));
         
     }
 
@@ -57,7 +57,7 @@ class QuizController extends Controller
     public function create($subject_id)
     {
         
-        return view('/quiz/quizDetail',compact('subject_id'));
+        return view('/Admin/quiz/quizDetail',compact('subject_id'));
     }
 
     /**
@@ -111,7 +111,7 @@ class QuizController extends Controller
     {
         $quiz = Quiz::findorfail($id);
 
-        return view('quiz/editQuiz', compact('quiz'));
+        return view('/Admin/quiz/editQuiz', compact('quiz'));
     }
 
     /**
